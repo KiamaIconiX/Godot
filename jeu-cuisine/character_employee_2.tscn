@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqg5eh1rx2m8"]
+
+[ext_resource type="PackedScene" uid="uid://bi27dhykhp8xc" path="res://models/market model/character-employee.glb" id="1_mdibp"]
+[ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="2_42uuq"]
+
+[node name="character-employee2" instance=ExtResource("1_mdibp")]
+script = ExtResource("2_42uuq")
+
+[node name="Skeleton3D" parent="character-employee" index="0"]
+bones/4/rotation = Quaternion(0, 0, -0.382683, 0.92388)
+bones/5/rotation = Quaternion(0, 0, 0.382683, 0.92388)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://di68d28ol32jd"]
+
+[ext_resource type="PackedScene" uid="uid://cdb4kd3a21ivr" path="res://character_employee.tscn" id="1_m2rrc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nkmnt"]
+radius = 0.221247
+height = 0.918976
+
+[node name="Player3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.647083)
+disable_mode = 1
+slide_on_ceiling = false
+wall_min_slide_angle = 0.6353
+
+[node name="character-employee2" parent="." instance=ExtResource("1_m2rrc")]
+transform = Transform3D(0.998641, 0, -0.0521094, 0, 1, 0, 0.0521094, 0, 0.998641, 0.0123293, 0.0126391, 0.675129)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0174195, 0.436843, 0.664463)
+shape = SubResource("CapsuleShape3D_nkmnt")

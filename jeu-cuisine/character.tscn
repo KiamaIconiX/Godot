@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx82txu1diwx3"]
+
+[ext_resource type="PackedScene" uid="uid://daqg5eh1rx2m8" path="res://character_employee_2.tscn" id="1_xi6wr"]
+[ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="2_k0ql8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0t2s5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77rbw"]
+size = Vector3(0.76239, 0.692871, 0.322083)
+
+[node name="Character" type="Node"]
+
+[node name="character-employee2" parent="." instance=ExtResource("1_xi6wr")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="character-employee2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74526, 0.0430369, 3.67624)
+script = ExtResource("2_k0ql8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="character-employee2/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10935, 0, -0.421973)
+sprite_frames = SubResource("SpriteFrames_0t2s5")
+animation = &"new_animation"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="character-employee2/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0115662, 0.373143, 0.0141959)
+shape = SubResource("BoxShape3D_77rbw")
